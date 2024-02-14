@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Input Fields</title>
+    <style>
+      input {
+        margin: 5px;
+        padding: 5px;
+        width: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Enter a 6-digit code:</h2>
+
+    <input
+      type="text"
+      maxlength="1"
+      id="digit1"
+      oninput="onInputChange('digit1', 'digit2')"
+      onkeydown="onKeyDown('digit1', 'digit1')"
+      onpaste="onPaste(event, 'digit1')"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      id="digit2"
+      oninput="onInputChange('digit2', 'digit3')"
+      onkeydown="onKeyDown('digit2', 'digit1')"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      id="digit3"
+      oninput="onInputChange('digit3', 'digit4')"
+      onkeydown="onKeyDown('digit3', 'digit2')"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      id="digit4"
+      oninput="onInputChange('digit4', 'digit5')"
+      onkeydown="onKeyDown('digit4', 'digit3')"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      id="digit5"
+      oninput="onInputChange('digit5', 'digit6')"
+      onkeydown="onKeyDown('digit5', 'digit4')"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      id="digit6"
+      oninput="onInputChange('digit6', null)"
+      onkeydown="onKeyDown('digit6', 'digit5')"
+    />
+    <script src="index.js"></script>
+  </body>
+</html>
